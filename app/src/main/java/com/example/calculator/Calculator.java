@@ -1,15 +1,13 @@
 package com.example.calculator;
 
 
-
 public class Calculator {
     double operandOne, operandTwo, result;
 
     char operator;
 
 
-
-    public Calculator(){
+    public Calculator() {
 
     }
 
@@ -36,17 +34,27 @@ public class Calculator {
     public void setOperator(char operator) {
         this.operator = operator;
     }
-    public void performOperation(){
-        if(getOperator() == '+'){
-           result= getOperandOne() + getOperandTwo();
-        }
-        if(getOperator() == '-'){
-            result= getOperandOne() - getOperandTwo();
 
+    public void performOperation() {
+        switch (operator) {
+            case '+':
+                result = getOperandOne() + getOperandTwo();
+                break;
+            case '-':
+                result = getOperandOne() - getOperandTwo();
+                break;
+         /*   case '*':
+                result = getOperandOne() * getOperandTwo();
+                break;
+            case '/':
+                result = getOperandOne() / getOperandTwo();
+                break;*/
         }
+
 
     }
-    public double getResult(){
+
+    public double getResult() {
         performOperation();
         return result;
 
